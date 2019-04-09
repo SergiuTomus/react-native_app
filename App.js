@@ -19,20 +19,29 @@ const AppBottomNavigator = createBottomTabNavigator(
 
 const PlacesStackNavigator = createStackNavigator(
   {
-    Auth: AuthScreen,
     FindPlace: AppBottomNavigator,
     PlaceDetail: PlaceDetailScreen
   },
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: 'white'
+        backgroundColor: 'yellow'
       }
     }
   }
 );
 
-const AppContainer = createAppContainer(PlacesStackNavigator);
+const AppDrawerNavigator = createDrawerNavigator(
+  {
+    Places: PlacesStackNavigator,
+    Auth: AuthScreen
+  },
+  {
+    initialRouteName: "Places"
+  }
+);
+
+const AppContainer = createAppContainer(AppDrawerNavigator);
 
 export default class App extends Component {
   render() {

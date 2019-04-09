@@ -13,7 +13,6 @@ class SharePlaceScreen extends Component {
     return (
       <View style={styles.container}>
         <PlaceInput onPlaceAdded={this.placeAdded}/>
-        {/* <PlaceList places={this.props.places}/> */}
       </View>
     );
   }
